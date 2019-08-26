@@ -1,0 +1,13 @@
+title Add Note SPA Sequence (assumes notes page is already displayed)
+
+note over browser:
+new note request with
+payload: {"content":"ktech test 2","date":"2019-08-26T01:43:46.761Z"}
+end note
+browser->server: HTTP POST https://fullstack-exampleapp.herokuapp.com/new_note_spa
+server-->browser: {"message":"note created"}
+
+note over browser:
+browser executes the event handler
+that renders notes to display
+end note

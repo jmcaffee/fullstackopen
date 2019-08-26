@@ -1,0 +1,32 @@
+title Visit Notes SPA Sequence
+
+note over browser:
+request html page
+end note
+browser->server: HTTP GET https://fullstack-exampleapp.herokuapp.com/spa
+server-->browser: notes page html
+
+note over browser:
+html pulls in .css from server
+end note
+browser->server: HTTP GET https://fullstack-exampleapp.herokuapp.com/main.css
+server-->browser: main.css
+
+note over browser:
+html imports javascript
+browser requests .js script from server 
+end note
+browser->server: HTTP GET https://fullstack-exampleapp.herokuapp.com/spa.js
+server-->browser: spa.js
+
+note over browser:
+browser starts executing js-code
+that requests JSON data from server 
+end note
+browser-->server: HTTP GET https://fullstack-exampleapp.herokuapp.com/data.json
+server-->browser: [{"content":"HTML is easy","date":"2019-05-23T17:30:31.098Z"}]
+
+note over browser:
+browser executes the event handler
+that renders notes to display
+end note
